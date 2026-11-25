@@ -9,6 +9,6 @@ Laboratory work for the master's project on GenAI-based C# unit test generation 
 | **1.3** | [JetBrains Rider integration and UML diagrams](labs/1.3-uml/README.md) | Complete. |
 | **1.4** | [Single-agent design and both prompts](prompts/README.md) | Complete. |
 | **1.5** | [Gemini Colab notebook and reflection](notebooks/1.5-gemini/README.md) | Complete. |
-| **1.6** | [ChromaDB RAG notebook, dataset, and reflection](notebooks/1.6-rag/README.md) | Planned. |
+| **1.6** | [ChromaDB RAG notebook, dataset, and reflection](notebooks/1.6-rag/README.md) | Complete. |
 
-`data/` holds datasets. `prompts/` holds the 1.4 prompt files that the 1.5 notebook will reuse. The 1.5 and 1.6 notebooks will be under `notebooks/` in separate folders.
+`data/` holds datasets. `prompts/` holds the 1.4 prompt files that the 1.5 notebook reuses. The 1.5 and 1.6 notebooks are under `notebooks/` in separate folders.
