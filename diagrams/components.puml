@@ -1,0 +1,23 @@
+@startuml
+title GenAI unit test generation — component diagram
+
+actor "C# developer" as Developer
+component "Rider integration\n(proposed)" as Rider
+
+package "Thesis system" {
+  component "Test generation pipeline" as Pipeline
+  component "Code context extractor" as Context
+  component "RAG retrieval" as Retrieval
+  database "Reference code and test examples" as Examples
+  component "GenAI model" as Model
+  component ".NET test execution\nand coverage analysis" as Runner
+}
+
+Developer --> Rider : selects C# code
+Rider --> Pipeline : submits code and displays results
+Pipeline --> Context : prepares source context
+Pipeline --> Retrieval : searches for relevant examples
+Retrieval --> Examples : retrieves examples
+Pipeline --> Model : generates or revises unit tests
+Pipeline --> Runner : builds, runs, and measures coverage
+@enduml

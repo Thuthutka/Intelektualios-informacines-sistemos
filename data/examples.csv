@@ -1,0 +1,6 @@
+id,X,y
+1,"C# PasswordValidator method that checks password length, digit, uppercase letter and special character","xUnit tests for valid password, too short password, missing digit, missing uppercase letter and missing special character"
+2,C# EmailValidator method that checks whether an email has correct format,"xUnit tests for valid email, invalid email format, empty email and null email"
+3,C# UsernameService method that validates username before saving it,"xUnit tests for valid username, empty username, whitespace username and too short username"
+4,C# DeleteContributorService method that deletes contributor by id using repository dependency,"xUnit tests for successful delete, contributor not found and repository method verification"
+5,C# AddToCartEndpoint that validates request and sends command through mediator,"xUnit tests for successful add to cart, validation failure and mediator call verification"

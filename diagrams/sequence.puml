@@ -1,0 +1,35 @@
+@startuml
+title PasswordValidator - test generation and revision
+
+actor "C# developer" as Developer
+boundary "Rider integration" as Rider
+control "Test generation pipeline" as Pipeline
+participant "RAG retrieval" as RAG
+participant "GenAI model" as Model
+participant ".NET test execution" as Runner
+
+Developer -> Rider : Select PasswordValidator
+Rider -> Pipeline : Submit C# code and xUnit settings (X)
+Pipeline -> Pipeline : Extract source code context
+Pipeline -> RAG : Request relevant code and test examples
+RAG --> Pipeline : Return relevant examples
+
+loop While attempts remain and no candidate is validated
+  Pipeline -> Model : Send context, examples, and available feedback
+  Model --> Pipeline : Return generated or revised C# tests
+  Pipeline -> Runner : Build the test project
+  Runner --> Pipeline : Return build status and diagnostics
+  opt Build succeeds
+    Pipeline -> Runner : Run tests and measure coverage
+    Runner --> Pipeline : Return test results and coverage
+  end
+  alt Tests pass and meet the coverage target
+    Pipeline -> Pipeline : Mark tests as validated
+  else Build, tests, or coverage criteria fail
+    Pipeline -> Pipeline : Prepare feedback for the next attempt
+  end
+end
+
+Pipeline --> Rider : Return latest C# tests (y) and validation status
+Rider --> Developer : Show tests and validation report
+@enduml
