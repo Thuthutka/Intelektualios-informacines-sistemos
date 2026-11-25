@@ -1,0 +1,3 @@
+# Lab 1.5 — Reflection
+
+The AI agent takes a C# class and its expected behavior as input and generates an xUnit test suite as output. I used the same Gemini model and the same `OrderQuantityValidator` input for both runs. The few-shot prompt included three C# and xUnit examples from Lab 1.2. Both outputs tested zero and negative quantities, insufficient stock, and the 10-item limit. In this run, the zero-shot prompt generated nine cases and also checked zero stock and a quantity equal to stock below the order limit. The few-shot prompt generated eight cases in one parameterized theory, following the format of the reference examples. I compared the generated code by inspection, and the next step would be to run both suites with `dotnet test` and measure coverage.
